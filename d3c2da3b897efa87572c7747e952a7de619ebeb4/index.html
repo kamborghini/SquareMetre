@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>ROI and Square Meter Cost Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="container">
     <h1>ROI and Square Meter Cost Calculator</h1>
@@ -61,8 +63,123 @@
     <div id="results"></div>
   </div>
 
+  <div class="movable-box" id="movableBox">
+    <div class="container-table">
+      <h2>Projection Heights Table</h2>
+      <!-- Add a button to show/hide the table -->
+      <button id="toggleTableButton">Show/Hide Table</button>
+      <table id="projectionTable">
+        <tr>
+          <th>Unit Type</th>
+          <th>Projection Height to achieve 1sm</th>
+          <th>Projection Height to achieve 2sm</th>
+          <th>Projection Height to achieve 5sm</th>
+          <th>Projection Height to achieve 7sm</th>
+          <th>Cost Per Unit</th>
+        </tr>
+        <tr>
+          <td>10w</td>
+          <td>4m</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>£220</td>
+        </tr>
+        <tr>
+          <td>20w</td>
+          <td>4m</td>
+          <td>5.7m</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>£320</td>
+        </tr>
+        <tr>
+          <td>40w</td>
+          <td>3.3m</td>
+          <td>4.8m</td>
+          <td>12m</td>
+          <td>N/A</td>
+          <td>£545</td>
+        </tr>
+        <tr>
+          <td>40w 35 degree</td>
+          <td>2.3m</td>
+          <td>4.6m</td>
+          <td>11m</td>
+          <td>N/A</td>
+          <td>£590</td>
+        </tr>
+        <tr>
+          <td>80w</td>
+          <td>4m</td>
+          <td>4.8m</td>
+          <td>12m</td>
+          <td>16.7m</td>
+          <td>£1050</td>
+        </tr>
+        <tr>
+          <td>80w 35 degree</td>
+          <td>4m</td>
+          <td>4.6m</td>
+          <td>11.4m</td>
+          <td>15.9m</td>
+          <td>£1095</td>
+        </tr>
+        <tr>
+          <td>150w</td>
+          <td>4m</td>
+          <td>5.7m</td>
+          <td>14.2m</td>
+          <td>19.9m</td>
+          <td>£1550</td>
+        </tr>
+        <tr>
+          <td>200w</td>
+          <td>4m</td>
+          <td>5.7m</td>
+          <td>14.2m</td>
+          <td>19.9m</td>
+          <td>£2100</td>
+        </tr>
+        <tr>
+          <td>200w 45 degree</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>8.1m</td>
+          <td>11.4m</td>
+          <td>£2350</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+
+  <script>
+    // JavaScript to handle dragging of the movable box
+    const movableBox = document.getElementById('movableBox');
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    movableBox.addEventListener('mousedown', function (event) {
+      isDragging = true;
+      offsetX = event.clientX - movableBox.getBoundingClientRect().left;
+      offsetY = event.clientY - movableBox.getBoundingClientRect().top;
+    });
+
+    document.addEventListener('mousemove', function (event) {
+      if (isDragging) {
+        movableBox.style.left = event.clientX - offsetX + 'px';
+        movableBox.style.top = event.clientY - offsetY + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', function () {
+      isDragging = false;
+    });
+  </script>
 </body>
+
 </html>
 
 
@@ -70,6 +187,6 @@
 ==========================================
  Title:  ROI and Square Meter Cost Calculator
  Author: Cameron Melville
- Date:   25 July 2023
+ Date:   25 July 2023 17:39
 ========================================== 
 -->
