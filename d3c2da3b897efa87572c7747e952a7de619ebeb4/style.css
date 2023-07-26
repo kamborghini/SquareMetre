@@ -17,6 +17,7 @@ body {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  padding-bottom: 60px;
 }
 
 h1 {
@@ -79,26 +80,34 @@ th {
   background-color: #f2f2f2;
 }
 
-/* CSS for the movable box */
-.movable-box {
-  position: absolute;
-  top: 100px;
-  /* Adjust the initial position as needed */
-  left: 100px;
-  /* Adjust the initial position as needed */
-  border: 0px solid #ccc;
-  background-color: #ffffff;
-  cursor: move;
-  overflow: hidden;
-  /* Prevent content overflow during resizing */
-}
+    /* CSS for the movable box */
+    .movable-box {
+      position: absolute;
+      top: 100px; /* Adjust the initial position as needed */
+      left: 100px; /* Adjust the initial position as needed */
 
-/* Media query to hide the table on mobile viewports */
-@media (max-width: 768px) {
-  .movable-box {
-    display: none;
-  }
-}
+      background-color: #ffffff;
+      cursor: move;
+      overflow: hidden; /* Prevent content overflow during resizing */
+    }
+
+    /* Media query to hide the table on mobile viewports */
+    @media (max-width: 768px) {
+      .movable-box {
+        display: none;
+      }
+    }
+
+    /* Center-align the "Toggle Table" button horizontally */
+    .container-table {
+      position: relative;
+    }
+    #toggleTableButton {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
 
 
 
