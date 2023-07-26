@@ -67,6 +67,7 @@ button:hover {
 table {
   border-collapse: collapse;
   margin: 20px auto;
+  margin-top: 70px; /* Add spacing between the button and the table */
 }
 
 table,
