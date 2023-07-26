@@ -45,9 +45,19 @@ function calculatePaintedTotalCost(paintedSqMeters, paintedCostPerSqMeter, paint
   return paintedTotalCost;
 }
 
+// JavaScript to handle showing and hiding the table
+document.getElementById('toggleTableButton').addEventListener('click', function () {
+  const table = document.getElementById('projectionTable');
+  if (table.style.display === 'none') {
+    table.style.display = 'table';
+  } else {
+    table.style.display = 'none';
+  }
+});
+
 
 // ==========================================
 //  Title:  ROI and Square Meter Cost Calculator
 //  Author: Cameron Melville
-//  Date:   25 July 2023
+//  Date:   25 July 2023 17:37
 // ========================================== 
